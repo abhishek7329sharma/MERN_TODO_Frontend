@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = `https://mern-todo-backend-miqn.onrender.com`
+const baseURL = `https://mern-todo-backend-6rij.onrender.com`
 
 const getAllTodo = (setTodo) => {
     axios.get(baseURL)
