@@ -19,7 +19,7 @@ function App() {
   }
 
   const deleteTodo = (_id) => {
-    deleteItem(_id, setText, setTodo)
+    deleteItem(_id, setTodo)
   }
 
   return (

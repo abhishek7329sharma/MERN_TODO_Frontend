@@ -26,7 +26,7 @@ const updateTodo = (id, text, setTodo, setText, setIsUpating) => {
     }).catch(err => console.log(err))
 }
 
-const deleteItem = (_id, setTodo) => {
+const deleteItem = (_id, setTodo, setText) => {
     axios.post(`${baseURL}/delete`, { _id })
     .then((data)=>{
         getAllTodo(setTodo)
