@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import Todo from './components/Todo'
-import { createTodo, deleteItem, getAllTodo, updateTodo } from './utils/handleApi';
+import { createTodo, deleteItem, getAllTodo, updateTodo, updateTodoStatus } from './utils/handleApi';
+import Toast from './components/Toast';
 
 function App() {
   const [todo, setTodo] = useState([])
@@ -41,13 +42,16 @@ function App() {
           {
             todo.map(item => <Todo 
             key={item._id} 
-            text={item.text} 
+            text={item.text}
+            done={item.done} 
             updateMode={() => updateMode(item._id, item.text)} 
             deleteTodo={() => deleteTodo(item._id)} 
+            handleMarkAsDone = {()=> updateTodoStatus(item._id, item.done, setTodo)}
             />)
           }
         </div>
       </div>
+      <Toast />
     </div>
   )
 }

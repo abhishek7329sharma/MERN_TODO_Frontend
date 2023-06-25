@@ -54,3 +54,37 @@ input {
 .delete{
   color: #ff4231;
 }
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox label {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+  margin-right: 8px;
+}
+
+.checkbox input:checked + label:after {
+  content: '\2713';
+  font-size: 14px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.todo.done .checkbox label {
+  background-color: #a0a0a0;
+}
+.todo.done {
+  background-color: #0ecb08;
+}
